@@ -4,26 +4,11 @@ using namespace std;
 
 int main()
 {
-    float TPR, TNR, TP, TN, FP, FN;
+    int i;
 
-    cout << "Enter values of TP : ";
-    cin >> TP;
-
-    cout << "Enter values of TN : ";
-    cin >> TN;
-
-    cout << "Enter values of FP : ";
-    cin >> FP;
-
-    cout << "Enter values of FN : " ;
-    cin >> FN;
-
-    TPR = (TP/(TP+FN));
-    TNR = (TN/(TN+FP));
-
-    cout << "The value of TPR : " << TPR << endl;
-    cout << "The value of TNR : " << TNR << endl;
-
-
+    for(i=10; i>1; i=i+1){
+        cout << 10-i;
+    }
+    cout << 10-i;
     return 0;
 }
