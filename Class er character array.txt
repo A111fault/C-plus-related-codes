@@ -1,0 +1,81 @@
+#include <iostream>
+using namespace std;
+
+// set all values of a character array to null '\0' character
+void charArrayInit(char [],int);
+// take input into a character array
+int charArrayInput(char []);
+// check if the string is a reverse of itself or not 
+int isPaliandrom(char [], int);
+//check if the string is an integer or not
+int isInteger(char [], int);
+// is two strings are equal
+int isEqual(char [], char [], int); 
+// if one string is reverse of another string yes/no
+int isEqual_R(char [], char [], int);
+// if a string is a substring of other string yes/no
+int subStr(char [], int , char [], int);
+// if a string is a match as substring returned in percentage
+float isMatch(char [], int, char [], int);
+
+int main()
+{
+    char a[10];
+    int str_length;
+    charArrayInit(a, 10);
+    str_length = charArrayInput(a);
+
+    cout << a;
+
+    return 0;
+}
+void charArrayInit(char c[], int array_size){
+    int i;
+    for (i =0;  i< array_size; i = i +1){
+        c[i] = '\0';
+    }
+}
+int charArrayInput(char c[]){
+
+    int length;
+    
+    cout << "Enter a character string (<10): ";
+    cin >> c;
+    
+    length = 0;
+    while(c[length]!= '\0'){
+        length = length +1;
+    }
+    
+    return length;
+}
+
+int isPaliandrom(char c[], int length){
+        int i,j,paliandrom;
+
+        paliandrom = 1;
+        j = length-1; 
+        for(i = 0; i < length ; i = i +1){
+            if(c[i]!=c[j]){
+                paliandrom = 0;
+                break;
+            }
+        j = j - 1;
+        }
+        
+        return paliandrom;
+}
+
+int isInteger(char c[], int length){
+        int i,j,integer;
+
+        integer = 1;
+        for(i = 0; i < length ; i = i +1){
+            if(c[i]<'0' || c[i]>'9'){
+                integer = 0;
+                break;
+            }
+        }
+        
+        return integer;
+}
